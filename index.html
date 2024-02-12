@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictive Maintenance</title>
+    <style>
+        body{
+            text-align : center;
+        }
+        #up{
+            background-color : blue;
+        }
+        #sub{
+            background-color : grey;
+        }
+        button{
+            color : white;
+            padding : 5px;
+            border : 0px;
+            border-radius : 3px;
+            font-size : 13px;
+        }
+        #up:hover{
+            cursor : pointer;
+            box-shadow : 2px 1px blue;
+        }
+        #sub:hover{
+            cursor : pointer;
+            box-shadow : 2px 1px grey;
+        }
+    </style>
+</head>
+<body>
+    <h1>Predictive Maintenance</h1>
+    <hr>
+    <h3>Please upload input features (in .csv format)</h3>
+    <hr>
+    <div class="inp">
+        <input type="file" accept=".csv" id="fileinp">
+        <button id="up">Upload</button>
+        <button id="sub">Submit</button>
+    </div>
+</body>
+</html>
