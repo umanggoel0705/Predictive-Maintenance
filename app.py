@@ -4,12 +4,6 @@ import pandas as pd
 import pickle
 app = Flask(__name__)
 
-def ValuePredictor(to_predict_list):
-    loaded_model = pickle.load(open("rfc.pickle", "rb"))
-    X_user = pd.DataFrame([to_predict_list])
-    result = loaded_model.predict(X_user)[0]
-    return result
-
 @app.route("/")
 
 def index():
@@ -43,7 +37,6 @@ def result():
         result = loaded_model.predict(X_user)[0]
         # return "Failure Type: " + result
     return render_template("result.html", result = result)
-
 
 if __name__ == "__main__":
     app.run(debug = True)
