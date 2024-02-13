@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictive Maintenance</title>
+    <style>
+        body{
+            text-align : center;
+        }
+        #sub{
+            background-color : grey;
+        }
+        button{
+            color : white;
+            padding : 5px;
+            border : 0px;
+            border-radius : 3px;
+            font-size : 13px;
+        }
+        button:hover{
+            cursor : pointer;
+            font-size : 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Predictive Maintenance</h1>
+    <hr>
+    <h3>Please upload input features</h3>
+    <hr>
+    <div class="inp">
+        <form action="/result" method="POST">
+            <label>Enter the Air Temperature[C]: </label>
+            <input type="number" step="0.01" id="air_temp" name="a_t">
+            <br>
+            <br>
+            <label>Enter the Process Temperature[C]: </label>
+            <input type="number" step="0.01" id="pro_temp" name="p_t">   
+            <br>
+            <br>
+            <label>Enter the Rotational speed[rpm]: </label>
+            <input type="number" id="rot_speed" name="r_s">        
+            <br>
+            <br>
+            <label>Enter the Torque[Nm]: </label>
+            <input type="number" step="0.01" id="tor" name="to">        
+            <br>
+            <br>
+            <label>Enter the Tool wear[min]:</label>
+            <input type="number" id="tool_wear" name="t_w">        
+            <br>
+            <br>
+            <label>Enter the Type of machine(L/M/H): </label>
+            <input type="text" id="Type" name="T">        
+            <br>
+            <br>
+            <button id="sub">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
