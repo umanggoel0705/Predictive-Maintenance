@@ -2,7 +2,13 @@ from flask import Flask, render_template, request
 import numpy as np
 import pandas as pd
 import pickle
+from sklearn.metrics import classification_report
+
 app = Flask(__name__)
+
+df = pd.read_csv(r'D:\Umang\AI & ML\Predictive Maintenance\submitted1.csv')
+rfc_pred = df['Predicted Failure'].values
+y_true = df['Ground Truth'].values
 
 @app.route("/")
 
@@ -35,8 +41,9 @@ def result():
         X_user = pd.DataFrame([user_inp])
         loaded_model = pickle.load(open("rfc.pickle", "rb"))
         result = loaded_model.predict(X_user)[0]
+        report = classification_report(rfc_pred, y_true)
         # return "Failure Type: " + result
-    return render_template("result.html", result = result)
+    return render_template("result.html", result = result, report = report)
 
 if __name__ == "__main__":
     app.run(debug = True)
