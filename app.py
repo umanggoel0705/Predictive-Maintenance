@@ -6,7 +6,7 @@ from sklearn.metrics import classification_report
 
 app = Flask(__name__)
 
-df = pd.read_csv(r'D:\Umang\AI & ML\Predictive Maintenance\submitted1.csv')
+df = pd.read_csv(r'submitted1.csv')
 rfc_pred = df['Predicted Failure'].values
 y_true = df['Ground Truth'].values
 
